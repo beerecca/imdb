@@ -1,0 +1,61 @@
+﻿@model IMDB.ViewModels.MovieActorData
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<div class="jumbotron">
+    <h1>IMDB</h1>
+    <p class="lead">IMDb, the world's most popular and authoritative source for movie, TV and celebrity content.</p>
+    
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        <p>@Html.DropDownList("genre", "All") @Html.TextBox("Search") <input class="btn btn-primary btn-large" type="submit" value="Search" /></p>
+    }
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>List of Movies</h2>
+        
+        <table class="table">
+            <tr>
+                <th>Title</th>
+                <th>Release Date</th>
+                <th>Genre</th>
+                <th>Description</th>
+                <th>Actors</th>
+            </tr>
+
+            @foreach (var item in Model.Movies)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReleaseDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Genre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @{
+                            foreach (var actor in item.Actors)
+                            {
+                                <p>@actor.Name</p>
+                            }
+                        }
+                            
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+
+</div>
