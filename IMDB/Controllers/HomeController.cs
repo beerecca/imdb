@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using IMDB.Models;
 using IMDB.ViewModels;
@@ -16,7 +15,12 @@ namespace IMDB.Controllers
         public ActionResult Index(string genre, string search)
         {
 
-            
+            var viewModel = new MovieActorData
+            {
+                Movies = db.Movies
+                    .Include(i => i.Actors)
+            };
+
 
             var genreLst = new List<string>(); //create new empty list
 
@@ -25,18 +29,8 @@ namespace IMDB.Controllers
                 select d.Genre; //get all genres from the db context . movie table
 
             genreLst.AddRange(genreQry.Distinct()); //add all distinct genres to the empty list
-            ViewBag.genre = new SelectList(genreLst); //create a select list called genre
+            ViewBag.genre = new SelectList(genreLst); //create a select list called genre            
 
-
-            var viewModel = new MovieActorData();
-
-            viewModel.Movies = db.Movies
-                .Include(i => i.Actors);
-
-
-
-          //  var movies = from m in db.Movies
-          //               select m; //create a data list of all movies
 
             if (!String.IsNullOrEmpty(search))
             {
@@ -49,6 +43,23 @@ namespace IMDB.Controllers
             }
 
             return View(viewModel); 
+        }
+
+        public ActionResult Actors(string movieId)
+        {
+            var viewModel = new MovieActorData
+            {
+                Movies = db.Movies
+                    .Include(i => i.Actors)
+            };
+
+            if (!string.IsNullOrEmpty(movieId))
+            {
+                var lookupId = int.Parse(movieId);
+                viewModel.Movies = viewModel.Movies.Where(r => r.Id == lookupId);
+            }
+
+            return PartialView("ActorsPartial", viewModel);
         }
 
         public ActionResult About()

@@ -23,6 +23,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Actorsss", "Actors", "Home")</li>
                 </ul>
             </div>
         </div>
@@ -38,5 +39,17 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $(".clicky").click(function () {
+                var movieId = $(this).attr('data-movie');
+                $(".actors").load('@(Url.Action("Actors","Home",null, Request.Url.Scheme))?movieId=' + movieId); //will need to move to seperate file and remove razor code, replace with proper link
+            });
+        }); //wrap in an app object, hasCurrentlySelectedMovie (movieId not null, to show and hide the .actors div) and selectedMovie, and an init to set up the click events - var imdb = object, imdb.init is what you call
+    </script>
+    
+
 </body>
 </html>

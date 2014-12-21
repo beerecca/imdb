@@ -15,7 +15,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8">
         <h2>List of Movies</h2>
         
         <table class="table">
@@ -23,15 +23,13 @@
                 <th>Title</th>
                 <th>Release Date</th>
                 <th>Genre</th>
-                <th>Description</th>
-                <th>Actors</th>
             </tr>
 
             @foreach (var item in Model.Movies)
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Title)
+                        <a href="#" class="clicky" data-movie="@Html.DisplayFor(modelItem => item.Id)">@Html.DisplayFor(modelItem => item.Title)</a>
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.ReleaseDate)
@@ -39,23 +37,15 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Genre)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                    <td>
-                        @{
-                            foreach (var actor in item.Actors)
-                            {
-                                <p>@actor.Name</p>
-                            }
-                        }
-                            
-                    </td>
                 </tr>
             }
 
         </table>
 
+    </div>
+    
+    <div class="col-md-4">
+        <div class="actors">@{Html.RenderPartial("ActorsPartial", Model);}</div>
     </div>
 
 </div>
