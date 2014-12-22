@@ -131,33 +131,9 @@
     <Compile Include="Migrations\201412160937102_AddActors.Designer.cs">
       <DependentUpon>201412160937102_AddActors.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201412160947061_AddActors2.cs" />
-    <Compile Include="Migrations\201412160947061_AddActors2.Designer.cs">
-      <DependentUpon>201412160947061_AddActors2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412161004387_AddActors3.cs" />
-    <Compile Include="Migrations\201412161004387_AddActors3.Designer.cs">
-      <DependentUpon>201412161004387_AddActors3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412182148471_AddActors4.cs" />
-    <Compile Include="Migrations\201412182148471_AddActors4.Designer.cs">
-      <DependentUpon>201412182148471_AddActors4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412190925397_AddActors1.cs" />
-    <Compile Include="Migrations\201412190925397_AddActors1.Designer.cs">
-      <DependentUpon>201412190925397_AddActors1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412191005165_AddActors6.cs" />
-    <Compile Include="Migrations\201412191005165_AddActors6.Designer.cs">
-      <DependentUpon>201412191005165_AddActors6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412191006134_AddActors7.cs" />
-    <Compile Include="Migrations\201412191006134_AddActors7.Designer.cs">
-      <DependentUpon>201412191006134_AddActors7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412210623439_AddActors71.cs" />
-    <Compile Include="Migrations\201412210623439_AddActors71.Designer.cs">
-      <DependentUpon>201412210623439_AddActors71.cs</DependentUpon>
+    <Compile Include="Migrations\201412220315247_AddImages.cs" />
+    <Compile Include="Migrations\201412220315247_AddImages.Designer.cs">
+      <DependentUpon>201412220315247_AddImages.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Actor.cs" />
@@ -178,6 +154,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -199,7 +176,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Home\ActorsPartial.cshtml" />
+    <Content Include="Views\Home\DetailsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201412152357051_InitialCreate.resx">
@@ -208,26 +185,8 @@
     <EmbeddedResource Include="Migrations\201412160937102_AddActors.resx">
       <DependentUpon>201412160937102_AddActors.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412160947061_AddActors2.resx">
-      <DependentUpon>201412160947061_AddActors2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412161004387_AddActors3.resx">
-      <DependentUpon>201412161004387_AddActors3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412182148471_AddActors4.resx">
-      <DependentUpon>201412182148471_AddActors4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412190925397_AddActors1.resx">
-      <DependentUpon>201412190925397_AddActors1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412191005165_AddActors6.resx">
-      <DependentUpon>201412191005165_AddActors6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412191006134_AddActors7.resx">
-      <DependentUpon>201412191006134_AddActors7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412210623439_AddActors71.resx">
-      <DependentUpon>201412210623439_AddActors71.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201412220315247_AddImages.resx">
+      <DependentUpon>201412220315247_AddImages.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -235,7 +194,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

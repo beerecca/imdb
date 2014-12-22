@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.Data.Entity;
 using System.Collections.Generic;
 
 namespace IMDB.Models
@@ -15,6 +14,7 @@ namespace IMDB.Models
         public DateTime ReleaseDate { get; set; }
         public string Genre { get; set; }
         public string Description { get; set; }
+        public string Image { get; set; }
 
         public virtual ICollection<Actor> Actors { get; set; }
     }

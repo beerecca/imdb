@@ -1,12 +1,10 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - IMDB</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -24,7 +22,6 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Actorsss", "Actors", "Home")</li>
                 </ul>
             </div>
         </div>
@@ -36,25 +33,6 @@
             <p>&copy; @DateTime.Now.Year - IMDB - Rebecca Hill</p>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-    
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-
-            var firstClicky = $('.clicky').first().attr('data-movie');
-            $(".actors").load('@(Url.Action("ActorsPartial","Home",null, Request.Url.Scheme))?movieId=' + firstClicky);
-
-            $(".clicky").click(function () {
-                var movieId = $(this).attr('data-movie');
-                $(".actors").load('@(Url.Action("ActorsPartial","Home",null, Request.Url.Scheme))?movieId=' + movieId); //will need to move to seperate file and remove razor code, replace with proper link
-            });
-        }); //wrap in an app object, hasCurrentlySelectedMovie (movieId not null, to show and hide the .actors div) and selectedMovie, and an init to set up the click events - var imdb = object, imdb.init is what you call
-    </script>
-    
-
+    @Scripts.Render("~/bundles/scripts")
 </body>
 </html>

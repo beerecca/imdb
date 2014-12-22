@@ -35,6 +35,4 @@ c:\users\rebecca.hill\documents\visual studio 2013\Projects\IMDB\IMDB\obj\Debug\
 c:\users\rebecca.hill\documents\visual studio 2013\Projects\IMDB\IMDB\obj\Debug\IMDB.Migrations.AddActors3.resources
 C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Debug\IMDB.Migrations.AddActors4.resources
 C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Debug\IMDB.Migrations.AddActors1.resources
-C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Debug\IMDB.Migrations.AddActors6.resources
-C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Debug\IMDB.Migrations.AddActors7.resources
-C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Debug\IMDB.Migrations.AddActors71.resources
+C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Debug\IMDB.Migrations.AddImages.resources

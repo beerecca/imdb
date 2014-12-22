@@ -1,0 +1,15 @@
+﻿@model IMDB.ViewModels.MovieActorData
+
+@foreach (var item in Model.Movies)
+{
+    <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
+
+    <p><b>Description</b></p>
+    <p>@Html.DisplayFor(modelItem => item.Description)</p>
+
+    <p><b>Actors</b></p>
+    foreach (var actor in item.Actors)
+    {
+        <p>@actor.Name</p>
+    }
+}

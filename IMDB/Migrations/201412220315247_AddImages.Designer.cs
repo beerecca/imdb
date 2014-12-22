@@ -7,13 +7,13 @@ namespace IMDB.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.2-21211")]
-    public sealed partial class AddActors71 : IMigrationMetadata
+    public sealed partial class AddImages : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddActors71));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddImages));
         
         string IMigrationMetadata.Id
         {
-            get { return "201412210623439_AddActors71"; }
+            get { return "201412220315247_AddImages"; }
         }
         
         string IMigrationMetadata.Source

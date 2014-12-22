@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using IMDB.Models;
@@ -21,7 +20,6 @@ namespace IMDB.Controllers
                     .Include(i => i.Actors)
             };
 
-
             var genreLst = new List<string>(); //create new empty list
 
             var genreQry = from d in db.Movies
@@ -32,7 +30,7 @@ namespace IMDB.Controllers
             ViewBag.genre = new SelectList(genreLst); //create a select list called genre            
 
 
-            if (!String.IsNullOrEmpty(search))
+            if (!string.IsNullOrEmpty(search))
             {
                 viewModel.Movies = viewModel.Movies.Where(s => s.Title.Contains(search)); //list of movies is constrained to where the title contains the search
             }
@@ -45,7 +43,7 @@ namespace IMDB.Controllers
             return View(viewModel); 
         }
 
-        public ActionResult ActorsPartial(string movieId)
+        public ActionResult DetailsPartial(string movieId)
         {
             var viewModel = new MovieActorData
             {
@@ -59,7 +57,7 @@ namespace IMDB.Controllers
                 viewModel.Movies = viewModel.Movies.Where(r => r.Id == lookupId);
             }
 
-            return PartialView("ActorsPartial", viewModel);
+            return PartialView("DetailsPartial", viewModel);
         }
 
         public ActionResult About()
