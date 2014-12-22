@@ -20,24 +20,25 @@ namespace IMDB.Controllers
                     .Include(i => i.Actors)
             };
 
-            var genreLst = new List<string>(); //create new empty list
+
+            var genreLst = new List<string>();
 
             var genreQry = from d in db.Movies
                 orderby d.Genre
-                select d.Genre; //get all genres from the db context . movie table
+                select d.Genre;
 
-            genreLst.AddRange(genreQry.Distinct()); //add all distinct genres to the empty list
-            ViewBag.genre = new SelectList(genreLst); //create a select list called genre            
+            genreLst.AddRange(genreQry.Distinct());
+            ViewBag.genre = new SelectList(genreLst);   
 
 
             if (!string.IsNullOrEmpty(search))
             {
-                viewModel.Movies = viewModel.Movies.Where(s => s.Title.Contains(search)); //list of movies is constrained to where the title contains the search
+                viewModel.Movies = viewModel.Movies.Where(s => s.Title.Contains(search));
             }
 
             if (!string.IsNullOrEmpty(genre))
             {
-                viewModel.Movies = viewModel.Movies.Where(x => x.Genre == genre); //list of movies is constrained to the genre selected
+                viewModel.Movies = viewModel.Movies.Where(x => x.Genre == genre);
             }
 
             return View(viewModel); 

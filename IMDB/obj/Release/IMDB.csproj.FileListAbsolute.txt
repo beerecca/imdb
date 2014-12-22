@@ -28,7 +28,6 @@ C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\bin\Antlr3
 C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Release\IMDB.csprojResolveAssemblyReference.cache
 C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Release\IMDB.Migrations.InitialCreate.resources
 C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Release\IMDB.Migrations.AddActors.resources
-C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Release\IMDB.Migrations.AddActors1.resources
 C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Release\IMDB.Migrations.AddImages.resources
 C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Release\IMDB.csproj.GenerateResource.Cache
 C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Release\IMDB.dll
