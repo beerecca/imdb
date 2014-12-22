@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -43,9 +44,13 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
+
+            var firstClicky = $('.clicky').first().attr('data-movie');
+            $(".actors").load('@(Url.Action("ActorsPartial","Home",null, Request.Url.Scheme))?movieId=' + firstClicky);
+
             $(".clicky").click(function () {
                 var movieId = $(this).attr('data-movie');
-                $(".actors").load('@(Url.Action("Actors","Home",null, Request.Url.Scheme))?movieId=' + movieId); //will need to move to seperate file and remove razor code, replace with proper link
+                $(".actors").load('@(Url.Action("ActorsPartial","Home",null, Request.Url.Scheme))?movieId=' + movieId); //will need to move to seperate file and remove razor code, replace with proper link
             });
         }); //wrap in an app object, hasCurrentlySelectedMovie (movieId not null, to show and hide the .actors div) and selectedMovie, and an init to set up the click events - var imdb = object, imdb.init is what you call
     </script>

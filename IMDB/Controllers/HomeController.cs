@@ -45,7 +45,7 @@ namespace IMDB.Controllers
             return View(viewModel); 
         }
 
-        public ActionResult Actors(string movieId)
+        public ActionResult ActorsPartial(string movieId)
         {
             var viewModel = new MovieActorData
             {

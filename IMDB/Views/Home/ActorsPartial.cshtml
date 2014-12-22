@@ -3,6 +3,7 @@
 
 @foreach (var item in Model.Movies)
 {
+    <h2>More Info about @Html.DisplayFor(modelItem => item.Title)</h2>
     
     <h2>Movie Description</h2>
     <p>@Html.DisplayFor(modelItem => item.Description)</p>
