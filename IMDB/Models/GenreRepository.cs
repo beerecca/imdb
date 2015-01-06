@@ -9,9 +9,9 @@ namespace IMDB.Models
     {
         private ImdbContext db = new ImdbContext();
 
-        public List<Genre> GetGenres()
+        public List<string> GetGenreNames()
         {
-            return db.Genres.ToList();
+            return db.Genres.Select(genre => genre.Name).Distinct().ToList();
         }
     }
 }

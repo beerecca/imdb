@@ -31,8 +31,5 @@ c:\users\rebecca.hill\documents\visual studio 2013\Projects\IMDB\IMDB\bin\Entity
 c:\users\rebecca.hill\documents\visual studio 2013\Projects\IMDB\IMDB\obj\Debug\IMDB.Migrations.InitialCreate.resources
 c:\users\rebecca.hill\documents\visual studio 2013\Projects\IMDB\IMDB\obj\Debug\IMDB.csproj.GenerateResource.Cache
 c:\users\rebecca.hill\documents\visual studio 2013\Projects\IMDB\IMDB\obj\Debug\IMDB.Migrations.AddActors.resources
-c:\users\rebecca.hill\documents\visual studio 2013\Projects\IMDB\IMDB\obj\Debug\IMDB.Migrations.AddActors2.resources
-c:\users\rebecca.hill\documents\visual studio 2013\Projects\IMDB\IMDB\obj\Debug\IMDB.Migrations.AddActors3.resources
-C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Debug\IMDB.Migrations.AddActors4.resources
-C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Debug\IMDB.Migrations.AddActors1.resources
 C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Debug\IMDB.Migrations.AddImages.resources
+C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Debug\IMDB.Migrations.Genre.resources

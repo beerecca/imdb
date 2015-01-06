@@ -13,7 +13,7 @@
         {
             <div class="navbar-form">
                 @Html.TextBox("Search", "", new { @class = "form-control", @placeholder = "Search" })
-                @Html.DropDownList("genre", null, "All", new { @class = "form-control"})
+                @Html.DropDownList("genre", new SelectList(Model.GenreList), "All", new { @class = "form-control"})
                 <button class="btn btn-primary" type="submit" value="Search"><span class="glyphicon glyphicon-search"></span></button>
             </div>
         }
@@ -49,7 +49,7 @@
                         @foreach (var genre in item.Genres)
                         {
                             <td>
-                                @genre.Name
+                                @Html.DisplayFor(modelItem => genre.Name)
                             </td>
                         }
                     </tr>
