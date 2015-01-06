@@ -32,3 +32,4 @@ C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Releas
 C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Release\IMDB.csproj.GenerateResource.Cache
 C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Release\IMDB.dll
 C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Release\IMDB.pdb
+C:\Users\rebecca.hill\Documents\Visual Studio 2013\Projects\IMDB\IMDB\obj\Release\IMDB.Migrations.Genre.resources

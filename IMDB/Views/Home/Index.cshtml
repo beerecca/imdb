@@ -46,9 +46,12 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.ReleaseDate)
                         </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Genre)
-                        </td>
+                        @foreach (var genre in item.Genres)
+                        {
+                            <td>
+                                @genre.Name
+                            </td>
+                        }
                     </tr>
                 }
             </table>

@@ -2,7 +2,7 @@
 
 namespace IMDB.Models
 {
-    public class Actor
+    public class Genre
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -10,4 +10,3 @@ namespace IMDB.Models
         public virtual ICollection<Movie> Movies { get; set; }
     }
 }
-

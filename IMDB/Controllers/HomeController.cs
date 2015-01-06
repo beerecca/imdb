@@ -1,44 +1,34 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Mvc;
 using IMDB.Models;
 using IMDB.ViewModels;
-using System.Data.Entity;
 
 namespace IMDB.Controllers
 {
     public class HomeController : Controller
     {
-        private ImdbContext db = new ImdbContext();
+        private MovieRepository movieRepository = new MovieRepository();
+        private GenreRepository genreRepository = new GenreRepository(); //when should vars be an underscore? 
 
         public ActionResult Index(string genre, string search)
         {
-
             var viewModel = new MovieActorData
             {
-                Movies = db.Movies
-                    .Include(i => i.Actors)
-            };
+                Movies = movieRepository.GetMovies()
+            }; //repeating this, can put as private on the class?
 
-
-            var genreLst = new List<string>();
-
-            var genreQry = from d in db.Movies
-                orderby d.Genre
-                select d.Genre;
-
-            genreLst.AddRange(genreQry.Distinct());
-            ViewBag.genre = new SelectList(genreLst);   
+            var genreList = genreRepository.GetGenres().Distinct().ToArray();
+            ViewBag.genre = new SelectList(genreList);   //can we get refactor out the viewbag?
 
 
             if (!string.IsNullOrEmpty(search))
             {
-                viewModel.Movies = viewModel.Movies.Where(s => s.Title.Contains(search));
+                viewModel.Movies = movieRepository.GetMoviesByTitle(search); 
             }
 
             if (!string.IsNullOrEmpty(genre))
             {
-                viewModel.Movies = viewModel.Movies.Where(x => x.Genre == genre);
+                viewModel.Movies = movieRepository.GetMoviesByGenre(genre);
             }
 
             return View(viewModel); 
@@ -48,14 +38,13 @@ namespace IMDB.Controllers
         {
             var viewModel = new MovieActorData
             {
-                Movies = db.Movies
-                    .Include(i => i.Actors)
+                Movies = movieRepository.GetMovies()
             };
 
             if (!string.IsNullOrEmpty(movieId))
             {
                 var lookupId = int.Parse(movieId);
-                viewModel.Movies = viewModel.Movies.Where(r => r.Id == lookupId);
+                viewModel.Movies = movieRepository.GetMoviesById(lookupId);
             }
 
             return PartialView("DetailsPartial", viewModel);

@@ -12,10 +12,10 @@ namespace IMDB.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime ReleaseDate { get; set; }
-        public string Genre { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
 
         public virtual ICollection<Actor> Actors { get; set; }
+        public virtual ICollection<Genre> Genres { get; set; }
     }
 }

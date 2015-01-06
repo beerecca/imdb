@@ -6,7 +6,8 @@ namespace IMDB.ViewModels
 {
     public class MovieActorData
     {
-        public IQueryable<Movie> Movies { get; set; }
+        public List<Movie> Movies { get; set; }
+        public List<Genre> Genres { get; set; }
         public IEnumerable<Actor> Actors { get; set; }
     }
 }
