@@ -30,17 +30,12 @@ namespace IMDB.Controllers
             return View(viewModel); 
         }
 
-        public ActionResult DetailsPartial(string movieId)
+        public ActionResult DetailsPartial(int movieId)
         {
             var viewModel = new MovieActorData
             {
-                Movies = _movieRepository.GetMovies()
+                Movies = _movieRepository.GetMovies(movieId)
             };
-
-            if (!string.IsNullOrEmpty(movieId))
-            {
-                viewModel.Movies = _movieRepository.GetMovies(int.Parse(movieId));
-            }
 
             return PartialView("DetailsPartial", viewModel);
         }
