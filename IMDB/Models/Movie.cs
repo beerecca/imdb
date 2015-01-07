@@ -4,9 +4,8 @@ using System.Collections.Generic;
 
 namespace IMDB.Models
 {
-    public class Movie
+    public class Movie : BaseModel
     {
-        public int Id { get; set; }
         public string Title { get; set; }
         [Display(Name = "Release Date")]
         [DataType(DataType.Date)]

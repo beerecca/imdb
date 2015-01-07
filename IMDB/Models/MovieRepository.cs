@@ -5,10 +5,8 @@ using System.Web;
 
 namespace IMDB.Models
 {
-    public class MovieRepository
+    public class MovieRepository : BaseRepository<Movie>
     {
-        private ImdbContext db = new ImdbContext();
-
         public List<Movie> GetMovies(int id = 0, string title = null, string genre = null)
         {
             if (id != 0)
