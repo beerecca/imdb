@@ -141,6 +141,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Actor.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\BaseRepository.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\GenreRepository.cs" />
     <Compile Include="Models\ImdbContext.cs" />

@@ -5,9 +5,8 @@ using System.Web;
 
 namespace IMDB.Models
 {
-    public class GenreRepository
+    public class GenreRepository : BaseRepository<Genre>
     {
-        private ImdbContext db = new ImdbContext();
 
         public List<string> GetGenreNames()
         {
