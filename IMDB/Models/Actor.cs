@@ -2,7 +2,7 @@
 
 namespace IMDB.Models
 {
-    public class Actor
+    public class Actor : IModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

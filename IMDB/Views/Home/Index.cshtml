@@ -22,7 +22,7 @@
         
 @if (Model.Movies.Any())
 {
-    <h2>Top 250 Movies of All Time</h2>
+    <h2>Top Movies of All Time</h2>
     <p>As voted by regular IMDb users.</p>
 
     <div class="row">
@@ -46,12 +46,13 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.ReleaseDate)
                         </td>
+                        <td>
                         @foreach (var genre in item.Genres)
                         {
-                            <td>
-                                @Html.DisplayFor(modelItem => genre.Name)
-                            </td>
+                            @Html.DisplayFor(modelItem => genre.Name)
+                            @(item.Genres.Last() != genre ? "/" : "")
                         }
+                        </td>
                     </tr>
                 }
             </table>

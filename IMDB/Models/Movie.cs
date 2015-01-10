@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace IMDB.Models
 {
-    public class Movie
+    public class Movie : IModel
     {
         public int Id { get; set; }
         public string Title { get; set; }

@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using IMDB.Models;
 
-namespace IMDB.Models
+namespace IMDB.Repositories
 {
-    public class GenreRepository
+    public class GenreRepository : BaseRepository<Genre>
     {
-        private ImdbContext db = new ImdbContext();
-
         public List<string> GetGenreNames()
         {
             return db.Genres.Select(genre => genre.Name).Distinct().ToList();

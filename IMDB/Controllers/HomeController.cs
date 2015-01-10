@@ -1,5 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
 using IMDB.Models;
+using IMDB.Repositories;
 using IMDB.ViewModels;
 
 namespace IMDB.Controllers
@@ -9,8 +12,11 @@ namespace IMDB.Controllers
         private readonly MovieRepository _movieRepository = new MovieRepository();
         private readonly GenreRepository _genreRepository = new GenreRepository();
 
-        public ActionResult Index(string genre, string search)
+        public ActionResult Index(string search, string genre)
         {
+            var searchFilter = _movieRepository.GetMoviesByTitle(search);
+            var genreFilter = _movieRepository.GetMoviesByGenre(genre);
+
             var viewModel = new MovieActorData
             {
                 Movies = _movieRepository.GetMovies(),
@@ -19,12 +25,17 @@ namespace IMDB.Controllers
 
             if (!string.IsNullOrEmpty(search))
             {
-                viewModel.Movies = _movieRepository.GetMovies(title: search); 
+                viewModel.Movies = searchFilter; 
             }
 
             if (!string.IsNullOrEmpty(genre))
             {
-                viewModel.Movies = _movieRepository.GetMovies(genre: genre);
+                viewModel.Movies = genreFilter;
+            }
+
+            if (!string.IsNullOrEmpty(search) && !string.IsNullOrEmpty(genre))
+            {
+                viewModel.Movies = searchFilter.Intersect(genreFilter).ToList();
             }
 
             return View(viewModel); 
@@ -34,7 +45,7 @@ namespace IMDB.Controllers
         {
             var viewModel = new MovieActorData
             {
-                Movies = _movieRepository.GetMovies(movieId)
+               Movies = _movieRepository.GetById(movieId)
             };
 
             return PartialView("DetailsPartial", viewModel);
