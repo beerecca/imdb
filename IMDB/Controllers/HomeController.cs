@@ -17,7 +17,7 @@ namespace IMDB.Controllers
             var searchFilter = _movieRepository.GetMoviesByTitle(search);
             var genreFilter = _movieRepository.GetMoviesByGenre(genre);
 
-            var viewModel = new MovieActorData
+            var viewModel = new MovieData
             {
                 Movies = _movieRepository.GetMovies(),
                 GenreList = _genreRepository.GetGenreNames()
@@ -43,7 +43,7 @@ namespace IMDB.Controllers
 
         public ActionResult DetailsPartial(int movieId)
         {
-            var viewModel = new MovieActorData
+            var viewModel = new MovieData
             {
                Movies = _movieRepository.GetById(movieId)
             };
