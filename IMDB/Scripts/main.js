@@ -3,13 +3,13 @@
 
     var imdb = {
         
-        init : function()
-        {
-            var defaultId = $('.movie-item').first().attr('data-movie');
-            var defaultImage = $('.movie-item').first().attr('data-image');
-            var movieImages = $('.movie-item').map(function () {
-                return $(this).attr('data-image');
-            }).get();
+        init: function() {
+
+            var defaultId = $('.movie-item').first().attr('data-movie'),
+                defaultImage = $('.movie-item').first().attr('data-image'),
+                movieImages = $('.movie-item').map(function () {
+                    return $(this).attr('data-image');
+                }).get();
 
             this.preloadImages(movieImages)
                 .loadDetails(defaultId)
@@ -17,41 +17,49 @@
                 .setUpEvents();
         },
 
-        preloadImages: function (imageArray) {
+        preloadImages: function(imageArray) {
 
             var preloadedImages = [];
-            for (var i = 0; i < imageArray.length; i++) {
+
+            $.each(imageArray, function(i, val) {
                 preloadedImages[i] = new Image();
-                preloadedImages[i].src = imageArray[i];
-            }
-
-            return this;
-        },
-
-        setUpEvents : function() {
-
-            var self = this;
-            $(".movie-item").click(function () {
-                var movieId = $(this).attr('data-movie');
-                var movieImage = $(this).attr('data-image');
-
-                self.loadDetails(movieId);
-                self.updateUi(movieId, movieImage);
+                preloadedImages[i].src = val;
             });
 
             return this;
         },
 
-        loadDetails : function (movieId) {
+        setUpEvents: function() {
+
+            var self = this;
+
+            $(".movie-item").click(function (e) {
+                
+                var movieId = $(this).attr('data-movie');
+                var movieImage = $(this).attr('data-image');
+
+                e.preventDefault();
+                self.loadDetails(movieId);
+                self.updateUi(movieId, movieImage);
+
+                return false;
+            });
+
+            return this;
+        },
+
+        loadDetails: function(movieId) {
             
-            if (movieId != undefined) {
+            if (movieId !== undefined) {
                 $(".actors").load('/Home/DetailsPartial?movieId=' + movieId);
+            } else {
+                $(".actors").text('Sorry, it appears there has been an error. Please refresh your page.');
             }
 
             return this;
         },
 
-        updateUi: function (movieId, movieImage) {
+        updateUi: function(movieId, movieImage) {
 
             $('.movie-item').parents('tr').removeClass("active");
             $('[data-movie=' + movieId + ']').parents('tr').addClass("active");
